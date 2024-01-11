@@ -1,5 +1,4 @@
-import React, { useReducer, useContext } from 'react'
-import { TodosContext } from '../context/todos'
+import React, { useReducer } from 'react'
 
 const CHANGE_LABEL = 'CHANGE_LABEL'
 const CHANGE_IS_COMPLETED = 'CHANGE_IS_COMPLETED'
@@ -22,8 +21,8 @@ const reducer = (state, action) => {
   }
 }
 
-export default function TodoForm() {
-  const { createNewTodo } = useContext(TodosContext)
+export default function TodoForm(props) {
+  const { createNewTodo } = props
   const [state, dispatch] = useReducer(reducer, initialState)
   const onLabelChange = ({ target: { value } }) => {
     dispatch({ type: CHANGE_LABEL, payload: value })

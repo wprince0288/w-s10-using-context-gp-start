@@ -1,19 +1,18 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { TodosContext } from '../context/todos'
 
 const StyledTodo = styled.li`
   text-decoration: ${pr => pr.$complete ? 'line-through' : 'initial'};
   cursor: pointer;
 `
 
-export default function Todo() {
+export default function Todo(props) {
   const {
     todos,
     toggleTodo,
     showCompletedTodos,
     toggleShowCompletedTodos
-  } = useContext(TodosContext)
+  } = props
 
   return (
     <div id="todos">
