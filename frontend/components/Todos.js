@@ -24,7 +24,8 @@ export default function Todo(props) {
               return showCompletedTodos || !todo.complete
             })
             .map(todo => (
-              <StyledTodo onClick={() => toggleTodo(todo.id)} $complete={todo.complete} key={todo.id}>
+              <StyledTodo onClick={() => toggleTodo(todo.id)}
+                $complete={todo.complete} key={todo.id}>
                 <span>{todo.label}{todo.complete && ' ✔️'}</span>
               </StyledTodo>
             ))
